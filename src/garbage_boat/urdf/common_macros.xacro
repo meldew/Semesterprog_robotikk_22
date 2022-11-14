@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+
+<robot name="xacro_macros" xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <xacro:macro name="link_wheel" params="link_name length:=0.05 radius:=0.10 density:=15 *origin_col *origin_inertial">
+    <xacro:property name="mass" value="${pi*length*pow(radius,2)*density}" />
+    <link name="${link_name}">
+      <collision>
+        <!-- <origin xyz="0 0 0" rpy="0 0 0"/> -->
+        <xacro:insert_block name="origin_col" />
+        <geometry>
+          <cylinder length="${length}" radius="${radius}"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <!-- <origin xyz="0 0 0" rpy="0 0 0"/> -->
+        <xacro:insert_block name="origin_inertial" />
+        <mass value="${mass}"/>
+        <inertia
+          ixx="${mass*(3*pow(radius,2)+pow(length,2))/12}" ixy="0.0" ixz="0.0"
+          iyy="${mass*(3*pow(radius,2)+pow(length,2))/12}" iyz="0.0"
+          izz="${mass*pow(radius,2)/2}"/>
+      </inertial>
+    </link>
+  </xacro:macro>
+
+</robot>

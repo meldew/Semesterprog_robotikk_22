@@ -1,0 +1,9 @@
+<?xml version='1.0'?>
+
+<gazebo>
+  <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+    <robotNamespace>trash_arm</robotNamespace>
+    <controlPeriod>0.001</controlPeriod>
+    <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+  </plugin>
+</gazebo>

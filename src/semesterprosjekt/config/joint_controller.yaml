@@ -1,0 +1,35 @@
+boat_arm:
+  # Publish all joint states -----------------------------------
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 1000
+
+  # Controller
+  controller_base_arm:
+    type: position_controllers/JointPositionController
+    joint: arm_base_joint
+
+  # Controller
+  controller_joint_1:
+    type: position_controllers/JointPositionController
+    joint: link_1_joint
+
+  # Controller
+  controller_joint_2:
+    type: position_controllers/JointPositionController
+    joint: link_2_joint
+
+  # Controller
+  controller_joint_3:
+    type: position_controllers/JointPositionController
+    joint: link_3_joint
+
+  # Controller
+  controller_joint_4:
+    type: position_controllers/JointPositionController
+    joint: link_4_joint
+
+  # Controller
+  controller_joint_5:
+    type: position_controllers/JointPositionController
+    joint: link_5_joint

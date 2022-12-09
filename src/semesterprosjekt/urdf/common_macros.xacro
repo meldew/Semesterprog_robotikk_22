@@ -104,7 +104,7 @@
     </link>
   </xacro:macro>
 
-  <xacro:macro name="link_wheel" params="link_name length:=0.05 radius:=0.10 density:=15 *origin_col *origin_inertial">
+  <xacro:macro name="link_wheel" params="link_name length:=0.10 radius:=0.10 density:=20 *origin_col *origin_inertial">
     <xacro:property name="mass" value="${pi*length*pow(radius,2)*density}" />
     <link name="${link_name}">
       <collision>

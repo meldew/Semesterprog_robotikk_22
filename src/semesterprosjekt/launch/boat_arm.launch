@@ -22,5 +22,5 @@
       <rosparam file="$(find semesterprosjekt)/config/joint_controller.yaml" command="load"/>
 
       <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" ns="boat_arm"
-        args="joint_state_controller controller_base_arm controller_joint_1 controller_joint_2 controller_joint_3 controller_joint_4 controller_joint_5" />
+        args="joint_state_controller controller_base_arm controller_joint_1 controller_joint_2 controller_joint_3 controller_joint_4 controller_joint_5 controller_joint_6" />
 </launch>

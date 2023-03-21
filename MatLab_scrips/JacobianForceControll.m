@@ -44,7 +44,7 @@ trash_arm = SerialLink(L);
 
 
 %Force Controll
-restingPosition =       [0 -1.57 0 3.14 3.14 0 0];
+restPosition =       [0 -1.57 0 3.14 3.14 0 0];
 rotateBeforeUnfurl =    [1.57 -1.57 0 3.14 3.14 0 0];
 startPosition =         [2.36 -0.786 0.786 -1.57 3.14 0 0];
 stopPosition =          [0.786 -0.786 -0.786 -1.57 2.36 0 0];
@@ -56,7 +56,7 @@ ForceZ = 0; % Newton
 ForceTreshold = 20; % Newton 
 
 if (ForceX<=ForceTreshold && ForceY<= ForceTreshold && ForceZ<=ForceTreshold) 
-    J = trash_arm.jacobe(restingPosition)
+    J = trash_arm.jacobe(restPosition)
     W0 = [ForceX; ForceY; ForceZ; 0; 0; 0];
     Q = J' * W0
 else
